@@ -1,5 +1,5 @@
-mport os.path
-
+import os.path
+# This code can be edited for various applications
 completion_message = "Process completed."
 output_filename_prompt = "Please state the output file name. You do not need to add extensions:"
 
