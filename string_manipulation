@@ -8,7 +8,7 @@ output_filename_prompt = "Please state the output file name. You do not need to 
 def replace_str(file_name):
 
     with open(file_name, "r") as source_file, open(output_file_name, "w", buffering=16 * 1024 ** 2) as output_file:
-# Removal of speech marks and | values from string
+# Removal of speech marks and | values from string.
 # The string will be joined by ',' into one record of CSV.
 # The whole subroutine is carried out inside [] brackets so it is in a list immediately, to improve efficiency.
 # The string is stripped of empty white spaces, " is replaced by nothing, and the data is split where | is present in the string.          
