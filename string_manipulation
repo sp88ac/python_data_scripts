@@ -1,0 +1,25 @@
+mport os.path
+
+completion_message = "Process completed."
+output_filename_prompt = "Please state the output file name. You do not need to add extensions:"
+
+# This will turn the string into a row of comma separated values.
+def replace_str(file_name):
+
+    with open(file_name, "r") as source_file, open(output_file_name, "w", buffering=16 * 1024 ** 2) as output_file:
+# Removal of speech marks and | values from string            
+            for line in source_file:
+                    output_file.write(','.join([elem
+                                                for elem
+                                                in map(str.strip, line.replace(",", " ").split(" "))
+                                                if elem.strip()]) + "\n")
+
+file_name = input("File: ")
+while os.path.isfile(file_name) == False:
+    print("File not found! Try again.")
+    file_name = input("File: ")
+else:
+    output_file_name = input(output_filename_prompt) + ".txt"
+    replace_str(file_name)
+
+    print(completion_message)
